@@ -13,9 +13,11 @@ $("#formGroupExampleInput").change(function() {
                 console.log(response);
                 console.log("Changing Page");
                 $("#mSearch").html("The " + response.Type + " you've searched for is " + response.Title);
-                $("#mtitle1").html(response.Title);
+                $("#mtitle1").html(response.Title + "(" + response.Year + ")");
                 $("#s1").html("hi");
                 $("#desc").html(response.Plot);
+                $("#rate").html(response.Title);
+                $("#extra").html("Released in " + response.Released + ", " + response.Title + " is rated " + response.Rated)
                 x1.setAttribute("src", response.Poster);
                 console.log("Changed Page");
             }

@@ -5,10 +5,10 @@ $("#formGroupExampleInput").change(function() {
     console.log("RUNED");
     $.getJSON(
 
-        "http://www.omdbapi.com/?t=" + $("#formGroupExampleInput").val(),
-
+        "http://www.imdb.com/xml/find?json=1&nr=1&tt=on&q=" + $("#formGroupExampleInput").val(),
 
         function(response) {
+            console.log(response)
             if (response.Response == "True") {
                 console.log(response);
                 console.log("Changing Page");
@@ -17,7 +17,9 @@ $("#formGroupExampleInput").change(function() {
                 $("#s1").html("hi");
                 $("#desc").html(response.Plot);
                 $("#rate").html(response.Title);
-                $("#extra").html("Released in " + response.Released + ", " + response.Title + " is rated " + response.Rated)
+                $("#extra").html("Released in " + response.Released + ", " + response.Title +
+                " is rated " + response.Rated + ", " + response.Title + " has earrned a total of " 
+                + response.BoxOffice + ", " + response.Title + " is " + response.DVD + " on " + " DVD")
                 x1.setAttribute("src", response.Poster);
                 console.log("Changed Page");
             }
@@ -25,6 +27,7 @@ $("#formGroupExampleInput").change(function() {
                 console.log("Sorry, we couldn't find it")
                 e.setAttribute("visibility", "visible");
                 $("#alert11").css("visibility", "visible");
+                $("#box2").css("visibility", "hidden");
             }
         });
 });

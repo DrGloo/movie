@@ -1,3 +1,7 @@
 .alert1{
     visibility: hidden;
 }
+
+body {
+    background-image: url("https://blogs.letemps.ch/vues/wp-content/uploads/sites/8/2016/11/Hiroshi-Sugimoto-U.A.-Playhouse-New-York-1978-%C2%A9-Hiroshi-Sugimoto.-Courtesy-Gallery-Koyanagi-Copie.jpg");
+}
